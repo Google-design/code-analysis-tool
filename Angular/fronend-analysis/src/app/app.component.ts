@@ -29,7 +29,7 @@ export class AppComponent {
 
     const requestBody = { repo_url: this.repoUrl };  // Ensure repo_url is correctly passed
 
-    this.http.post<AnalysisResponse>('http://127.0.0.1:5000/run-analyzer', requestBody)
+    this.http.post<AnalysisResponse>('https://codeanalysis-42512.web.app/run-analyzer', requestBody)
       .pipe(
         catchError(error => {
           console.error('Error:', error);
@@ -68,7 +68,7 @@ export class AppComponent {
     const formData = new FormData();
     formData.append('file', this.selectedFile);
 
-    this.http.post<AnalysisResponse>('http://127.0.0.1:5000/run-analyzer', formData)
+    this.http.post<AnalysisResponse>('https://codeanalysis-42512.web.app/run-analyzer', formData)
       .pipe(
         catchError(error => {
           console.error('Error:', error);
